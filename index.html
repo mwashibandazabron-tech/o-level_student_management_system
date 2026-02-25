@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O-LEVEL STUDENT MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>O-LEVEL STUDENT MANAGEMENT SYSTEM</h1>
+    <!--STUDENT REGISTRATION -->
+    <h2>REGISTER STUDENT</h2>
+    <form id="studentForm">
+        <input type="text" id="id" placeholder="student id"> <br><br>
+        <input type="text" id="name" placeholder=" Full name required"> <br><br>
+        <input type="text" id="age" placeholder="age required" ><br><br>
+        <select id="gender">
+            <option value="">gender</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select> <br><br>
+        <select id="form" >
+            <option value="">form :</option>
+            <option value="1">form 1:</option>
+            <option value="2">form 2:</option>
+            <option value="3">form 3:</option>
+            <option value="4">form 4:</option>
+
+        </select> <br><br>
+        <button type="submit">add student</button>
+
+    </form> <br><br>
+    
+    <!--ADD MARKS BY SUBJECT-->
+    <h2>ADD MARKS BY SUBJECT</h2>
+    <div id="marksForm" style="display:none; border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; background: #fff9e6;">
+        <p><strong>Student: <span id="marksStudentName"></span></strong></p>
+        <label for="subject">Subject:</label>
+        <select id="subject">
+            <option value="">Select Subject</option>
+            <option value="English">English</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Science">Science</option>
+            <option value="Kiswahili">Kiswahili</option>
+            <option value="History">History</option>
+            <option value="Geography">Geography</option>
+            <option value="Biology">Biology</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Physics">Physics</option>
+        </select> <br><br>
+        
+        <label for="marks">Marks (0-100):</label>
+        <input type="number" id="marks" min="0" max="100" placeholder="Enter marks"> <br><br>
+        
+        <button onclick="saveMarks()">Save Marks</button>
+        <button onclick="cancelMarks()">Cancel</button>
+    </div>
+    
+    <!--STUDENT LIST-->
+    <h2>STUDENT LIST</h2>
+    <Table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Form</th>
+                <th>Marks</th>
+                <th>Average</th>
+                <th>Actions</th>
+            </tr>
+        </thead> <br><br>
+        <tbody id="studentTable"></tbody>
+
+    </Table>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
